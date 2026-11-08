@@ -1,0 +1,948 @@
+{
+  "openapi": "3.0.2",
+  "info": {
+    "title": "ChemEng AI Plugin & MCP Server",
+    "description": "Evidence-based Chemical Engineering AI Tutor, Process Simulator Analyst, and Calculation Engine.",
+    "version": "0.1.0"
+  },
+  "paths": {
+    "/tools/calculate_mass_balance": {
+      "post": {
+        "summary": "Calculate Mass Balance",
+        "operationId": "calculate_mass_balance_tools_calculate_mass_balance_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MassBalanceInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EngineeringCalculationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/calculate_energy_balance": {
+      "post": {
+        "summary": "Calculate Energy Balance",
+        "operationId": "calculate_energy_balance_tools_calculate_energy_balance_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EnergyBalanceInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EngineeringCalculationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/calculate_thermodynamics": {
+      "post": {
+        "summary": "Calculate Thermodynamics",
+        "operationId": "calculate_thermodynamics_tools_calculate_thermodynamics_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ThermodynamicsInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EngineeringCalculationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/size_process_equipment": {
+      "post": {
+        "summary": "Size Process Equipment",
+        "operationId": "size_process_equipment_tools_size_process_equipment_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EquipmentSizingInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/EngineeringCalculationResult"
+                }
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/recommend_property_method": {
+      "post": {
+        "summary": "Recommend Property Method",
+        "operationId": "recommend_property_method_tools_recommend_property_method_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PropertyMethodInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/troubleshoot_aspen": {
+      "post": {
+        "summary": "Troubleshoot Aspen",
+        "operationId": "troubleshoot_aspen_tools_troubleshoot_aspen_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/TroubleshootAspenInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/design_simulation_case": {
+      "post": {
+        "summary": "Design Simulation Case",
+        "operationId": "design_simulation_case_tools_design_simulation_case_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SimulationCaseInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/evaluate_engineering_solution": {
+      "post": {
+        "summary": "Evaluate Engineering Solution",
+        "operationId": "evaluate_engineering_solution_tools_evaluate_engineering_solution_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/EvaluateSolutionInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/search_chemical_papers": {
+      "post": {
+        "summary": "Search Chemical Papers",
+        "operationId": "search_chemical_papers_tools_search_chemical_papers_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/SearchPapersInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/analyze_research_paper": {
+      "post": {
+        "summary": "Analyze Research Paper",
+        "operationId": "analyze_research_paper_tools_analyze_research_paper_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/AnalyzePaperInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tools/generate_engineering_report": {
+      "post": {
+        "summary": "Generate Engineering Report",
+        "operationId": "generate_engineering_report_tools_generate_engineering_report_post",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/GenerateReportInput"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          },
+          "422": {
+            "description": "Validation Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/HTTPValidationError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/system-instructions": {
+      "get": {
+        "summary": "Get System Instructions",
+        "operationId": "get_system_instructions_system_instructions_get",
+        "responses": {
+          "200": {
+            "description": "Successful Response",
+            "content": {
+              "application/json": {
+                "schema": {}
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "AnalyzePaperInput": {
+        "title": "AnalyzePaperInput",
+        "required": [
+          "title",
+          "abstract_or_content"
+        ],
+        "type": "object",
+        "properties": {
+          "title": {
+            "title": "Title",
+            "type": "string",
+            "description": "Judul paper"
+          },
+          "doi": {
+            "title": "Doi",
+            "type": "string",
+            "description": "DOI paper (jika ada)"
+          },
+          "abstract_or_content": {
+            "title": "Abstract Or Content",
+            "type": "string",
+            "description": "Teks abstrak atau isi paper yang diberikan pengguna"
+          }
+        }
+      },
+      "EnergyBalanceInput": {
+        "title": "EnergyBalanceInput",
+        "required": [
+          "mass_flow_kg_h",
+          "cp_kj_kg_k",
+          "t_in_c",
+          "t_out_c"
+        ],
+        "type": "object",
+        "properties": {
+          "stream_name": {
+            "title": "Stream Name",
+            "type": "string",
+            "default": "Process Stream S-101"
+          },
+          "mass_flow_kg_h": {
+            "title": "Mass Flow Kg H",
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "description": "Laju alir massa (kg/h)"
+          },
+          "cp_kj_kg_k": {
+            "title": "Cp Kj Kg K",
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "description": "Kapasitas panas rata-rata Cp (kJ/kg.K)"
+          },
+          "t_in_c": {
+            "title": "T In C",
+            "type": "number",
+            "description": "Suhu masuk (\u00b0C)"
+          },
+          "t_out_c": {
+            "title": "T Out C",
+            "type": "number",
+            "description": "Suhu keluar (\u00b0C)"
+          },
+          "latent_heat_kj_kg": {
+            "title": "Latent Heat Kj Kg",
+            "minimum": 0.0,
+            "type": "number",
+            "description": "Panas laten penguapan/kondensasi jika ada perubahan fasa (kJ/kg)",
+            "default": 0.0
+          },
+          "vapor_fraction_change": {
+            "title": "Vapor Fraction Change",
+            "maximum": 1.0,
+            "minimum": -1.0,
+            "type": "number",
+            "description": "Perubahan fraksi uap (-1 kondensasi penuh, +1 penguapan penuh)",
+            "default": 0.0
+          }
+        }
+      },
+      "EngineeringCalculationResult": {
+        "title": "EngineeringCalculationResult",
+        "required": [
+          "tool_name",
+          "inputs_and_units",
+          "equations_used",
+          "calculation_steps",
+          "results_and_units",
+          "assumptions_and_limits",
+          "consistency_check",
+          "references"
+        ],
+        "type": "object",
+        "properties": {
+          "tool_name": {
+            "title": "Tool Name",
+            "type": "string"
+          },
+          "inputs_and_units": {
+            "title": "Inputs And Units",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "equations_used": {
+            "title": "Equations Used",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "calculation_steps": {
+            "title": "Calculation Steps",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "results_and_units": {
+            "title": "Results And Units",
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          },
+          "assumptions_and_limits": {
+            "title": "Assumptions And Limits",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "consistency_check": {
+            "title": "Consistency Check",
+            "type": "object"
+          },
+          "references": {
+            "title": "References",
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        }
+      },
+      "EquipmentSizingInput": {
+        "title": "EquipmentSizingInput",
+        "required": [
+          "equipment_type"
+        ],
+        "type": "object",
+        "properties": {
+          "equipment_type": {
+            "title": "Equipment Type",
+            "type": "string",
+            "description": "'heat_exchanger', 'pump', atau 'separator'"
+          },
+          "heat_duty_kw": {
+            "title": "Heat Duty Kw",
+            "type": "number",
+            "description": "Beban panas Q (kW) untuk Heat Exchanger"
+          },
+          "overall_u_w_m2_k": {
+            "title": "Overall U W M2 K",
+            "type": "number",
+            "description": "Koefisien perpindahan panas menyeluruh U (W/m2.K)",
+            "default": 500.0
+          },
+          "t_hot_in_c": {
+            "title": "T Hot In C",
+            "type": "number",
+            "description": "Suhu fluida panas masuk (\u00b0C)"
+          },
+          "t_hot_out_c": {
+            "title": "T Hot Out C",
+            "type": "number",
+            "description": "Suhu fluida panas keluar (\u00b0C)"
+          },
+          "t_cold_in_c": {
+            "title": "T Cold In C",
+            "type": "number",
+            "description": "Suhu fluida dingin masuk (\u00b0C)"
+          },
+          "t_cold_out_c": {
+            "title": "T Cold Out C",
+            "type": "number",
+            "description": "Suhu fluida dingin keluar (\u00b0C)"
+          },
+          "volumetric_flow_m3_h": {
+            "title": "Volumetric Flow M3 H",
+            "type": "number",
+            "description": "Laju alir volumetrik (m3/h) untuk Pompa"
+          },
+          "density_kg_m3": {
+            "title": "Density Kg M3",
+            "type": "number",
+            "description": "Densitas fluida (kg/m3)",
+            "default": 1000.0
+          },
+          "differential_head_m": {
+            "title": "Differential Head M",
+            "type": "number",
+            "description": "Head pompa (m)"
+          },
+          "pump_efficiency": {
+            "title": "Pump Efficiency",
+            "maximum": 1.0,
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "description": "Efisiensi pompa (0-1)",
+            "default": 0.75
+          }
+        }
+      },
+      "EvaluateSolutionInput": {
+        "title": "EvaluateSolutionInput",
+        "required": [
+          "problem_statement",
+          "user_calculation_steps"
+        ],
+        "type": "object",
+        "properties": {
+          "problem_statement": {
+            "title": "Problem Statement",
+            "type": "string",
+            "description": "Deskripsi soal atau kasus teknik kimia"
+          },
+          "user_calculation_steps": {
+            "title": "User Calculation Steps",
+            "type": "string",
+            "description": "Langkah dan hasil perhitungan pengguna"
+          },
+          "claimed_efficiency_or_yield": {
+            "title": "Claimed Efficiency Or Yield",
+            "type": "number",
+            "description": "Klaim efisiensi/konversi (0-100%)"
+          }
+        }
+      },
+      "GenerateReportInput": {
+        "title": "GenerateReportInput",
+        "required": [
+          "report_type",
+          "project_title",
+          "summary_data"
+        ],
+        "type": "object",
+        "properties": {
+          "report_type": {
+            "title": "Report Type",
+            "type": "string",
+            "description": "'Laporan Praktikum', 'Laporan Simulasi', atau 'Memori Perhitungan Desain'"
+          },
+          "project_title": {
+            "title": "Project Title",
+            "type": "string",
+            "description": "Judul proyek atau praktikum"
+          },
+          "summary_data": {
+            "title": "Summary Data",
+            "type": "object",
+            "description": "Data hasil perhitungan atau simulasi yang akan dimasukkan"
+          }
+        }
+      },
+      "HTTPValidationError": {
+        "title": "HTTPValidationError",
+        "type": "object",
+        "properties": {
+          "detail": {
+            "title": "Detail",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ValidationError"
+            }
+          }
+        }
+      },
+      "MassBalanceInput": {
+        "title": "MassBalanceInput",
+        "required": [
+          "feed_flow_kg_h",
+          "feed_composition",
+          "split_fractions_to_top"
+        ],
+        "type": "object",
+        "properties": {
+          "unit_name": {
+            "title": "Unit Name",
+            "type": "string",
+            "description": "Nama unit operasi",
+            "default": "Distillation Column C-101"
+          },
+          "feed_flow_kg_h": {
+            "title": "Feed Flow Kg H",
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "description": "Laju alir umpan (kg/h)"
+          },
+          "feed_composition": {
+            "title": "Feed Composition",
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "description": "Fraksi massa komponen umpan (total harus = 1.0), misal {'Benzene': 0.4, 'Toluene': 0.6}"
+          },
+          "split_fractions_to_top": {
+            "title": "Split Fractions To Top",
+            "type": "object",
+            "additionalProperties": {
+              "type": "number"
+            },
+            "description": "Fraksi pemisahan masing-masing komponen ke produk atas (0.0 - 1.0)"
+          }
+        }
+      },
+      "PropertyMethodInput": {
+        "title": "PropertyMethodInput",
+        "required": [
+          "components",
+          "polarity",
+          "pressure_bar"
+        ],
+        "type": "object",
+        "properties": {
+          "components": {
+            "title": "Components",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Daftar komponen dalam sistem"
+          },
+          "polarity": {
+            "title": "Polarity",
+            "type": "string",
+            "description": "'non-polar', 'polar-non-electrolyte', 'electrolyte', atau 'associating'"
+          },
+          "pressure_bar": {
+            "title": "Pressure Bar",
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "description": "Tekanan operasi maksimum (bar)"
+          },
+          "simulator": {
+            "title": "Simulator",
+            "type": "string",
+            "description": "'Aspen Plus' atau 'Aspen HYSYS'",
+            "default": "Aspen Plus"
+          }
+        }
+      },
+      "SearchPapersInput": {
+        "title": "SearchPapersInput",
+        "required": [
+          "query"
+        ],
+        "type": "object",
+        "properties": {
+          "query": {
+            "title": "Query",
+            "type": "string",
+            "description": "Kata kunci topik riset teknik kimia"
+          },
+          "year_from": {
+            "title": "Year From",
+            "type": "integer",
+            "description": "Filter tahun publikasi mulai dari",
+            "default": 2018
+          }
+        }
+      },
+      "SimulationCaseInput": {
+        "title": "SimulationCaseInput",
+        "required": [
+          "topic"
+        ],
+        "type": "object",
+        "properties": {
+          "topic": {
+            "title": "Topic",
+            "type": "string",
+            "description": "Topik proses (misal: 'Pemisahan Etanol-Air', 'Dehidrasi Gas Alam TEG')"
+          },
+          "user_level": {
+            "title": "User Level",
+            "type": "string",
+            "description": "'Mahasiswa S1', 'Peneliti', atau 'Process Engineer'",
+            "default": "Mahasiswa S1"
+          },
+          "simulator": {
+            "title": "Simulator",
+            "type": "string",
+            "description": "'Aspen Plus' atau 'Aspen HYSYS'",
+            "default": "Aspen Plus"
+          }
+        }
+      },
+      "ThermodynamicsInput": {
+        "title": "ThermodynamicsInput",
+        "required": [
+          "component_name",
+          "temperature_c",
+          "pressure_bar",
+          "antoine_a",
+          "antoine_b",
+          "antoine_c"
+        ],
+        "type": "object",
+        "properties": {
+          "component_name": {
+            "title": "Component Name",
+            "type": "string",
+            "description": "Nama komponen kimia"
+          },
+          "temperature_c": {
+            "title": "Temperature C",
+            "type": "number",
+            "description": "Suhu sistem (\u00b0C)"
+          },
+          "pressure_bar": {
+            "title": "Pressure Bar",
+            "exclusiveMinimum": 0.0,
+            "type": "number",
+            "description": "Tekanan sistem (bar)"
+          },
+          "antoine_a": {
+            "title": "Antoine A",
+            "type": "number",
+            "description": "Konstanta Antoine A (log10(P_bar) = A - B/(T_K + C))"
+          },
+          "antoine_b": {
+            "title": "Antoine B",
+            "type": "number",
+            "description": "Konstanta Antoine B"
+          },
+          "antoine_c": {
+            "title": "Antoine C",
+            "type": "number",
+            "description": "Konstanta Antoine C"
+          }
+        }
+      },
+      "TroubleshootAspenInput": {
+        "title": "TroubleshootAspenInput",
+        "required": [
+          "unit_operation",
+          "error_message"
+        ],
+        "type": "object",
+        "properties": {
+          "simulator": {
+            "title": "Simulator",
+            "type": "string",
+            "description": "'Aspen Plus' atau 'Aspen HYSYS'",
+            "default": "Aspen Plus"
+          },
+          "unit_operation": {
+            "title": "Unit Operation",
+            "type": "string",
+            "description": "Misal: 'RadFrac', 'Heater', 'Flash2', 'Recycle Loop'"
+          },
+          "error_message": {
+            "title": "Error Message",
+            "type": "string",
+            "description": "Pesan error atau warning dari Control Panel / Simulation Status"
+          },
+          "operating_conditions": {
+            "title": "Operating Conditions",
+            "type": "object",
+            "description": "Kondisi operasi terkait"
+          }
+        }
+      },
+      "ValidationError": {
+        "title": "ValidationError",
+        "required": [
+          "loc",
+          "msg",
+          "type"
+        ],
+        "type": "object",
+        "properties": {
+          "loc": {
+            "title": "Location",
+            "type": "array",
+            "items": {
+              "anyOf": [
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "integer"
+                }
+              ]
+            }
+          },
+          "msg": {
+            "title": "Message",
+            "type": "string"
+          },
+          "type": {
+            "title": "Error Type",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "servers": [
+    {
+      "url": "https://your-chemeng-ai-domain.com",
+      "description": "Production HTTPS Endpoint"
+    }
+  ]
+}
